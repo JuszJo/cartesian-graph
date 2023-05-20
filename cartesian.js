@@ -23,23 +23,22 @@ class Cartesian {
     }
 
     numberCartesianX() {
-        for(let number = 0; number < this.numberCount; this.distance += 20, ++number) {
-            this.connectPoints(this.x_origin + this.distance, this.y_origin + this.length, this.x_origin + this.distance, this.y_origin - this.length);
+        for(let number = 0, numberDistance = 20; number < this.numberCount; numberDistance += 20, ++number) {
+            this.connectPoints(this.x_origin + numberDistance, this.y_origin + this.length, this.x_origin + numberDistance, this.y_origin - this.length);
             drawingSurface.font = '12px Arial';
             drawingSurface.textAlign = 'center';
             drawingSurface.textBaseline = 'top'
-            drawingSurface.fillText(`${number + 1}`, this.x_origin + this.distance, this.y_origin + this.textDistance);
+            drawingSurface.fillText(`${number + 1}`, this.x_origin + numberDistance, this.y_origin + this.textDistance);
         }
-        this.distance = 20;
     }
 
     numberCartesianY() {
-        for(let number = 0; number < this.numberCount; this.distance += 20, ++number) {
-            this.connectPoints(this.x_origin - this.length, this.y_origin - this.distance, this.x_origin + this.length, this.y_origin - this.distance);
+        for(let number = 0, numberDistance = 20; number < this.numberCount; numberDistance += 20, ++number) {
+            this.connectPoints(this.x_origin - this.length, this.y_origin - numberDistance, this.x_origin + this.length, this.y_origin - numberDistance);
             drawingSurface.font = '12px Arial';
             drawingSurface.textAlign = 'center';
             drawingSurface.textBaseline = 'middle';
-            drawingSurface.fillText(`${number + 1}`, this.x_origin - this.textDistance - this.length, this.y_origin - this.distance);
+            drawingSurface.fillText(`${number + 1}`, this.x_origin - this.textDistance - this.length, this.y_origin - numberDistance);
         }
         this.distance = 20;
     }
